@@ -11,7 +11,7 @@ export const useStore = () => {
 		const newState = actions[actionIdentifier](globalState, payload);
 		globalState = { ...globalState, ...newState };
 
-		for (const listeners of listeners) {
+		for (const listener of listeners) {
 			listener(globalState);
 		}
 	};
